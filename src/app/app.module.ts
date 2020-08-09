@@ -9,6 +9,8 @@ import { AdminComponent } from './components/admin/admin.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { CompanyComponent } from './components/company/company.component';
 import { FormsModule } from '@angular/forms';
+import { UpdateCompanyComponent } from './components/update-company/update-company.component';
+import { UpdateCustomerComponent } from './components/update-customer/update-customer.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     AdminComponent,
     CustomerComponent,
-    CompanyComponent
+    CompanyComponent,
+    UpdateCompanyComponent,
+    UpdateCustomerComponent
   ],
   imports: [
     BrowserModule,

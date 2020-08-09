@@ -88,7 +88,7 @@ export class AdminComponent implements OnInit {
       });
   }
 
-  public deleteCustomer(customer){
+  public deleteCustomer(){
     this.service.deleteCustomer(this.custId).subscribe(
       response =>{
         alert(response);

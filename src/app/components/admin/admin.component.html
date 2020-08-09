@@ -30,6 +30,7 @@
                 <th>Email</th>
                 <th>Password</th>
                 <th>Remove</th>
+                <th>Update</th>
             </tr>
         </thead>
         <tbody>
@@ -39,7 +40,8 @@
                 <td>{{c.name}}</td>
                 <td>{{c.email}}</td>
                 <td>{{c.password}}</td>
-                <td><button (click)="deleteCompany(c)">delete</button></td>
+                <td><button>delete</button></td>
+                <td><a routerLink="/company/{{c.companyId}}">update</a></td>
             </tr>
         </tbody>
         </table>
@@ -55,6 +57,7 @@
                 <th>Email</th>
                 <th>Password</th>
                 <th>Remove</th>
+                <th>Update</th>
             </tr>
         </thead>
         <tbody>
@@ -64,7 +67,8 @@
                 <td>{{cu.lastName}}</td>
                 <td>{{cu.email}}</td>
                 <td>{{cu.password}}</td>
-                <td><button (click)="deleteCustomer(cu)">delete</button></td>
+                <td><button>delete</button></td>
+                <td><a routerLink="/customer/{{cu.customerId}}">update</a></td>
             </tr>
         </tbody>
         </table>

@@ -31,5 +31,38 @@
             </tbody>
             </table>
         </article>
+        <article>
+            <h2>All Coupons</h2>
+            <table *ngIf=systemCoups>
+             <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Type</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Start-Date</th>
+                    <th>End-Date</th>
+                    <th>Amount</th>
+                    <th>Price</th>
+                    <th>Image</th>
+                    <th>Buy</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let s of systemCoups">
+                    <td>{{s.couponId}}</td>
+                    <td>{{s.type}}</td>
+                    <td>{{s.title}}</td>
+                    <td>{{s.description}}</td>
+                    <td>{{s.startDate}}</td>
+                    <td>{{s.endDate}}</td>
+                    <td>{{s.amount}}</td>
+                    <td>{{s.price}}</td>
+                    <td>{{s.image}}</td>
+                    <td><button (click)="purchaseCoupon(s)">buy</button></td>
+                </tr>
+            </tbody>
+            </table>
+        </article>
     </div>
 </body>

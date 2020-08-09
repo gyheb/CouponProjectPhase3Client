@@ -26,10 +26,10 @@ export class AdminService {
     + sessionStorage.token + "/Company/" + compId);
   }
 
-  public getOneCompany(compId:number){
-    return this.httpClient.get<Company>("http://localhost:8080/admin/"
-    + sessionStorage.token + "/Comapny/" + compId);
-  }
+public getOneCompany(compId:number){
+  return this.httpClient.get<Company>("http://localhost:8080/admin/"
+  + sessionStorage.token + "/" + compId)
+}
 
   public updateCompany(company:Company){
     return this.httpClient.put<Company>("http://localhost:8080/admin/"

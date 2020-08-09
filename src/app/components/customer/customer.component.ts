@@ -11,6 +11,7 @@ import { Coupon } from 'src/app/models/coupon';
 export class CustomerComponent implements OnInit {
 
   coupons: Coupon[];
+  systemCoups: Coupon[];
 
   constructor(
     private service:CustomerService,
@@ -24,6 +25,19 @@ export class CustomerComponent implements OnInit {
       err => alert(err.error)
     );
 
+    this.service.getAllSystemCoupons().subscribe(
+      coups => this.systemCoups = coups,
+      err => alert(err.error)
+    );
+
+  }
+
+  public purchaseCoupon(coupon:Coupon){
+    this.service.purchaseCoupon(coupon).subscribe(
+      coup => {
+
+      },
+    );
   }
 
 }

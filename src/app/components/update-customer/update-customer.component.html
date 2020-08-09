@@ -1,0 +1,12 @@
+<body>
+    <div>
+        <h2>Update Customer</h2>
+        <form [formGroup]="updateCustomerForm">
+            <input type="text" placeholder="first name" formControlName="name"/><br/>
+            <input type="text" placeholder="last name" formControlName="last"/><br/>
+            <input type="text" placeholder="email" formControlName="email"/><br/>
+            <input type="text" placeholder="password" formControlName="password"/><br/>
+            <input type="button" value="Add" (click)="updateCustomer()"/>
+        </form>
+    </div>
+</body>

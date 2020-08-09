@@ -21,6 +21,11 @@ export class CustomerService {
     + sessionStorage.token + "/AllCoupons");
   }
 
+  public getAllSystemCoupons(){
+    return this.httpClient.get<Coupon[]>("http://localhost:8080/customer/"
+    + sessionStorage.token + "/AllSystemCoupons");
+  }
+
   public getAllCouponsByCategory(type:CategoryType){
     return this.httpClient.get<Coupon[]>("http://localhost:8080/customer/"
     + sessionStorage.token + "/CouponsByCategory/" + type);
