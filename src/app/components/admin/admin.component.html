@@ -1,0 +1,72 @@
+<h1>Manager Page</h1>
+<div>
+    <article>
+        <h2>Add Company</h2>
+        <form [formGroup]="addCompanyForm">
+            <input type="text" placeholder="name" formControlName="name"/><br/>
+            <input type="text" placeholder="email" formControlName="email"/><br/>
+            <input type="text" placeholder="password" formControlName="password"/><br/>
+            <input type="button" value="Add" (click)="addCompany()"/>
+        </form>
+    </article>
+    <article>
+        <h2>Add Customer</h2>
+        <form [formGroup]="addCustomerForm">
+            <input type="text" placeholder="first name" formControlName="name"/><br/>
+            <input type="text" placeholder="last name" formControlName="last"/><br/>
+            <input type="text" placeholder="email" formControlName="email"/><br/>
+            <input type="text" placeholder="password" formControlName="password"/><br/>
+            <input type="button" value="Add" (click)="addCustomer()"/>
+        </form>
+    </article>
+    <article>
+        <h2>All Companies</h2>
+        <!-- *ngIf = show only if there's something in "companies" -->
+        <table *ngIf=companies class="content-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- forEach loop -->
+            <tr *ngFor="let c of companies">
+                <td>{{c.companyId}}</td>
+                <td>{{c.name}}</td>
+                <td>{{c.email}}</td>
+                <td>{{c.password}}</td>
+                <td><button (click)="deleteCompany(c)">delete</button></td>
+            </tr>
+        </tbody>
+        </table>
+    </article>
+    <article>
+        <h2>All Customers</h2>
+        <table *ngIf=customers class="content-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cu of customers">
+                <td>{{cu.customerId}}</td>
+                <td>{{cu.firstName}}</td>
+                <td>{{cu.lastName}}</td>
+                <td>{{cu.email}}</td>
+                <td>{{cu.password}}</td>
+                <td><button (click)="deleteCustomer(cu)">delete</button></td>
+            </tr>
+        </tbody>
+        </table>
+    </article>
+</div>

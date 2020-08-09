@@ -1,0 +1,20 @@
+<body>
+  <div class="login-box">
+    <h1>Login Here</h1>
+      <form [formGroup]="loginForm">
+          <p>Username</p>
+          <input type="email" placeholder="Email" formControlName="email"/><br/>
+          <p>Password</p>
+          <input type="password" placeholder="Password" formControlName="password"/><br/>
+          <p>Type</p>
+          <select formControlName="type">
+            <option value="admin">Admin</option>
+            <option value="company">Company</option>
+            <option value="customer">Customer</option>
+          </select><br/>
+          <input type="button" value="Login" (click)="login()"/><br/>
+          <a href="#">Lost your password?</a><br/>
+          <a href="#">Don't have an account?</a>
+        </form>
+  </div>
+</body>
