@@ -1,0 +1,36 @@
+<body>
+  <div>
+    <article class="form-style-1">
+        <legend class="legend"><span class="number">2</span>Update Coupon</legend>
+        <form [formGroup]="updateCouponForm">
+            <fieldset>
+              <label>Category</label>
+              <select id="categories" formControlName="type">
+                  <option *ngFor="let c of categories" value={{c}}>{{c}}</option><br/>
+              </select><br/>
+              <label>Title</label>
+              <input type="text" placeholder="title" formControlName="title"/>
+              <span *ngIf="updateCouponForm.controls['title'].invalid && updateCouponForm.controls['title'].touched">
+                  Please enter coupon title</span><br/>
+              <label>Description</label>
+              <input type="text" placeholder="description" formControlName="description"/><br/>
+              <label>Start date</label>
+              <input type="date" placeholder="startDate" formControlName="startDate"/><br/>
+              <label>Start end</label>
+              <input type="date" placeholder="endDate" formControlName="endDate"/>
+              <span *ngIf="updateCouponForm.controls['endDate'].invalid && updateCouponForm.controls
+              ['endDate'].touched"> Can't be in the past</span><br/>
+              <label>Amount</label>
+              <input type="text" placeholder="amount" formControlName="amount"/>
+              <span *ngIf="updateCouponForm.controls['amount'].invalid && updateCouponForm.controls['amount'].touched">
+                   Can't be less than 1</span><br/>
+                   <label>price</label>
+              <input type="text" placeholder="price" formControlName="price"/><br/>
+              <label>Image</label>
+              <input type="text" placeholder="image" formControlName="image"/><br/>
+              <input type="button" value="Update" (click)="updateCoupon()"/>
+            </fieldset> 
+        </form>
+    </article>
+  </div>
+</body>

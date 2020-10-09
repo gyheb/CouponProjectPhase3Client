@@ -1,4 +1,4 @@
-body {
+body{
 	font-family: sans-serif;
 	background-image: url("https://coolbackgrounds.io/images/backgrounds/index/ranger-4df6c1b6.png");
 	background-size: cover;
@@ -8,7 +8,7 @@ body {
     overflow: hidden;
 }
 
-/* ======== Update a Company Form ========*/
+/* ======== Update a Coupon Form ========*/
 .form-style-1{
 	max-width: 500px;
 	padding: 10px 20px;
@@ -36,7 +36,9 @@ body {
 }
 
 .form-style-1 input[type="text"],
+.form-style-1 input[type="date"],
 .form-style-1 input[type="email"],
+.form-style-1 input[type="number"],
 .form-style-1 select {
 	font-family: Georgia, "Times New Roman", Times, serif;
 	background: rgba(255,255,255,.1);
@@ -58,7 +60,9 @@ body {
 }
 
 .form-style-1 input[type="text"]:focus,
+.form-style-1 input[type="date"]:focus,
 .form-style-1 input[type="email"]:focus,
+.form-style-1 input[type="number"]:focus,
 .form-style-1 select:focus{
 	background: #d2d9dd;
 }

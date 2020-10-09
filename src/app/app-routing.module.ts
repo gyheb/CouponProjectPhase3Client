@@ -6,6 +6,7 @@ import { CompanyComponent } from './components/company/company.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { UpdateCompanyComponent } from './components/update-company/update-company.component';
 import { UpdateCustomerComponent } from './components/update-customer/update-customer.component';
+import { UpdateCouponComponent } from './components/update-coupon/update-coupon.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: "company/:compId", component: UpdateCompanyComponent},
   {path: "customer", component: CustomerComponent},
   {path: "customer/:custId", component: UpdateCustomerComponent},
+  {path: "coupon/:coupId", component: UpdateCouponComponent},
   {path:"", pathMatch:"full", redirectTo:"login"}
 ];
 

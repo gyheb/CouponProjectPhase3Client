@@ -23,7 +23,7 @@ export class AdminService {
 
   public deleteCompany(compId:number){
     return this.httpClient.delete("http://localhost:8080/admin/"
-    + sessionStorage.token + "/Company/" + compId);
+    + sessionStorage.token + "/Company/" + compId, {responseType:"text"});
   }
 
 public getOneCompany(compId:number){
@@ -32,8 +32,8 @@ public getOneCompany(compId:number){
 }
 
   public updateCompany(company:Company){
-    return this.httpClient.put<Company>("http://localhost:8080/admin/"
-    + sessionStorage.token + "/Company", company);
+    return this.httpClient.put("http://localhost:8080/admin/"
+    + sessionStorage.token + "/Company", company, {responseType: "text"});
   }
   
   // Customer Mappings
@@ -48,8 +48,8 @@ public getOneCompany(compId:number){
   }
 
   public updateCustomer(customer:Customer){
-    return this.httpClient.put<Customer>("http://localhost:8080/admin/"
-    + sessionStorage.token + "/Customer", customer);
+    return this.httpClient.put("http://localhost:8080/admin/"
+    + sessionStorage.token + "/Customer", customer, {responseType: "text"});
   }
 
   public getAllCustomers(){
@@ -60,6 +60,10 @@ public getOneCompany(compId:number){
   public getOneCustomer(custId:number){
     return this.httpClient.get<Customer>("http://localhost:8080/admin/"
     + sessionStorage.token + "/Customer/" + custId);
+  }
+
+  public logout(){
+    return this.httpClient.post("http://localhost:8080/admin/logout", sessionStorage.token);
   }
 
 }

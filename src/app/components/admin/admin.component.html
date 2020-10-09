@@ -1,26 +1,40 @@
-<h1>Manager Page</h1>
+<html>
+<body>
 <div>
-    <article>
-        <h2>Add Company</h2>
+    <article class="form-style-1">
+        <legend><span class="number">1</span>Add Company</legend>
         <form [formGroup]="addCompanyForm">
+          <fieldset>
+            <label>Name</label>
             <input type="text" placeholder="name" formControlName="name"/><br/>
-            <input type="text" placeholder="email" formControlName="email"/><br/>
-            <input type="text" placeholder="password" formControlName="password"/><br/>
+            <label>Email</label>
+            <input type="email" placeholder="email" formControlName="email"/><br/>
+            <label>Password</label>
+            <input type="password" placeholder="password" formControlName="password"/><br/>
             <input type="button" value="Add" (click)="addCompany()"/>
+          </fieldset>
         </form>
     </article>
-    <article>
-        <h2>Add Customer</h2>
+    <article class="form-style-1">
+        <legend><span class="number">2</span>Add Customer</legend>
         <form [formGroup]="addCustomerForm">
+          <fieldset>
+            <label>First Name</label>
             <input type="text" placeholder="first name" formControlName="name"/><br/>
+            <label>Last Name</label>
             <input type="text" placeholder="last name" formControlName="last"/><br/>
-            <input type="text" placeholder="email" formControlName="email"/><br/>
-            <input type="text" placeholder="password" formControlName="password"/><br/>
+            <label>Email</label>
+            <input type="email" placeholder="email" formControlName="email"/><br/>
+            <label>Password</label>
+            <input type="password" placeholder="password" formControlName="password"/><br/>
             <input type="button" value="Add" (click)="addCustomer()"/>
-        </form>
+          </fieldset>
+        </form> 
     </article>
-    <article>
-        <h2>All Companies</h2>
+
+    
+    <article class="company-table">
+        <legend class="legend2"><span class="number2">3</span>All Companies</legend>
         <!-- *ngIf = show only if there's something in "companies" -->
         <table *ngIf=companies class="content-table">
         <thead>
@@ -40,15 +54,15 @@
                 <td>{{c.name}}</td>
                 <td>{{c.email}}</td>
                 <td>{{c.password}}</td>
-                <td><button>delete</button></td>
-                <td><a routerLink="/company/{{c.companyId}}">update</a></td>
+                <td><a href="#" class="deleteBtn" (click)="deleteCompany(c.companyId)" routerLink="admin">delete</a></td>
+                <td><a href="#" class="updateBtn" routerLink="/company/{{c.companyId}}">update</a></td>
             </tr>
         </tbody>
         </table>
-    </article>
-    <article>
-        <h2>All Customers</h2>
-        <table *ngIf=customers class="content-table">
+    </article><br/>
+    <article class="customer-table">
+        <legend class="legend3"><span class="number3">4</span>All Customers</legend>
+        <table *ngIf=customers class="content-table2">
         <thead>
             <tr>
                 <th>ID</th>
@@ -67,10 +81,13 @@
                 <td>{{cu.lastName}}</td>
                 <td>{{cu.email}}</td>
                 <td>{{cu.password}}</td>
-                <td><button>delete</button></td>
-                <td><a routerLink="/customer/{{cu.customerId}}">update</a></td>
+                <td><a href="#" class="deleteBtn" (click)="deleteCustomer(cu.customerId)" routerLink="/admin">delete</a></td>
+                <td><a href="#" class="updateBtn" routerLink="/customer/{{cu.customerId}}">update</a></td>
             </tr>
         </tbody>
         </table>
-    </article>
+    </article><br/>
+    <a href="#" class="logoutBtn" (click)="logout()">logout</a>
 </div>
+</body>
+</html>

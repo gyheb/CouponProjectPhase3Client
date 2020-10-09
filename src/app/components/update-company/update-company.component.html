@@ -1,10 +1,15 @@
 <body>
-    <div>
-        <h2>Update Company</h2>
+    <div class="form-style-1">
+        <legend class="legend"><span class="number">1</span>Update Company</legend>
         <form [formGroup]="updateCompanyForm">
-            <input type="text" placeholder="email" formControlName="email"/><br/>
+            <fieldset>
+            <label>Email</label>
+            <input type="email" placeholder="email" formControlName="email"/><br/>
+            <label>Password</label>
             <input type="text" placeholder="password" formControlName="password"/><br/>
             <input type="button" value="Update" (click)="updateComapny()"/>
+            </fieldset>
         </form>
+        
     </div>
 </body>

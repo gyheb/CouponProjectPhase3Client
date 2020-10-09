@@ -1,12 +1,18 @@
 <body>
-    <div>
-        <h2>Update Customer</h2>
+    <div class="form-style-1">
+        <legend class="legend"><span class="number">1</span>Update Customer</legend>
         <form [formGroup]="updateCustomerForm">
+            <fieldset>
+            <label>First Name</label>
             <input type="text" placeholder="first name" formControlName="name"/><br/>
+            <label>Last Name</label>
             <input type="text" placeholder="last name" formControlName="last"/><br/>
-            <input type="text" placeholder="email" formControlName="email"/><br/>
+            <label>Email</label>
+            <input type="email" placeholder="email" formControlName="email"/><br/>
+            <label>Password</label>
             <input type="text" placeholder="password" formControlName="password"/><br/>
-            <input type="button" value="Add" (click)="updateCustomer()"/>
+            <input type="button" value="Update" (click)="updateCustomer()"/>
+            </fieldset>
         </form>
     </div>
 </body>

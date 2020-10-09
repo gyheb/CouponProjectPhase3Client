@@ -11,6 +11,7 @@ import { CompanyComponent } from './components/company/company.component';
 import { FormsModule } from '@angular/forms';
 import { UpdateCompanyComponent } from './components/update-company/update-company.component';
 import { UpdateCustomerComponent } from './components/update-customer/update-customer.component';
+import { UpdateCouponComponent } from './components/update-coupon/update-coupon.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { UpdateCustomerComponent } from './components/update-customer/update-cus
     CustomerComponent,
     CompanyComponent,
     UpdateCompanyComponent,
-    UpdateCustomerComponent
+    UpdateCustomerComponent,
+    UpdateCouponComponent
   ],
   imports: [
     BrowserModule,

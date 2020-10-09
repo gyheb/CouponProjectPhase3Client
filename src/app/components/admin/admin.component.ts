@@ -18,13 +18,12 @@ export class AdminComponent implements OnInit {
   coupons:Coupon[]=[];
   companies:Company[];
   customers:Customer[];
-  custId = this.route.snapshot.params.custId;
+  company:Company;
 
   constructor(
     private fb:FormBuilder,
     private service: AdminService,
-    private router:Router,
-    private route:ActivatedRoute
+    private route:Router,
     ) { }
 
   ngOnInit(): void {
@@ -54,7 +53,15 @@ export class AdminComponent implements OnInit {
       err => alert(err.error)
     );
 
+  } // end of onInit
+
+  
+  logout(){
+    this.service.logout();
+    sessionStorage.clear();
+    this.route.navigate(['login']);
   }
+
   // Company Methods
   public addCompany(){
     let company = new Company(0,
@@ -66,11 +73,18 @@ export class AdminComponent implements OnInit {
       comp =>{
         this.companies.push(comp)
       }, err=> {
-        alert(err.error);
+        alert(err.error)
       });
   }
 
-  public deleteCompany(){}
+  public deleteCompany(compId:number){
+    this.service.deleteCompany(compId).subscribe(
+      response =>{
+        alert(response)
+        this.companies.shift();
+      }, err => alert(err.error)
+    );
+  }
 
   // Customer Methods
   public addCustomer(){
@@ -88,11 +102,11 @@ export class AdminComponent implements OnInit {
       });
   }
 
-  public deleteCustomer(){
-    this.service.deleteCustomer(this.custId).subscribe(
+  public deleteCustomer(custId:number){
+    this.service.deleteCustomer(custId).subscribe(
       response =>{
         alert(response);
-        this.router.navigate(["customers"]);
+        this.customers.shift();
       }, err => alert (err.error)
     );
   }

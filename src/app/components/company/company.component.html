@@ -1,1 +1,92 @@
-<p>company works!</p>
+<body>
+    <div>
+        <!-- Add Coupon Form -->
+        <article class="form-style-1">
+            <legend><span class="number">1</span>Add Coupon Form</legend>
+            <form [formGroup]="addCouponForm">
+                <fieldset>
+                    <label>Category</label>
+                  <select id="categories" formControlName="type">
+                      <option *ngFor="let c of categories" value={{c}}>{{c}}</option><br/>
+                  </select><br/>
+                  <label>Title</label>
+                  <input type="text" formControlName="title"/>
+                  <span *ngIf="addCouponForm.controls['title'].invalid && addCouponForm.controls['title'].touched">
+                      Please enter coupon title</span><br/>
+                  <label>Description</label>
+                  <input type="text" formControlName="description"/><br/>
+                  <label>Start date</label>
+                  <input type="date" placeholder="startDate" formControlName="startDate"/><br/>
+                  <label>End date</label>
+                  <input type="date" placeholder="endDate" formControlName="endDate"/>
+                  <span *ngIf="addCouponForm.controls['endDate'].invalid && addCouponForm.controls
+                  ['endDate'].touched"> Can't be in the past</span><br/>
+                  <label>Amount</label>
+                  <input type="text" formControlName="amount"/>
+                  <span *ngIf="addCouponForm.controls['amount'].invalid && addCouponForm.controls['amount'].touched">
+                      Can't be less than 1</span><br/>
+                  <label>Price</label>
+                  <input type="text" formControlName="price"/><br/>
+                  <label>Image</label>
+                  <input type="text" formControlName="image"/><br/>
+                  <input type="button" value="Add" (click)="addCoupon()"/>
+                </fieldset>
+            </form>
+        </article>
+
+        <!-- Searching Options -->
+        <a href="#" class="getAllCoupons" (click)="getAllCoupons()"
+        routerLink="/company">Show All</a>
+        <form [formGroup]="priceForm" class="byPriceChoice">
+            <input type="number" formControlName="price"/>
+            <a href="#" class="byPrice" (click)="getByPrice()" 
+            routerLink="/company">By Price</a>
+        </form>
+        <form [formGroup]="categoryForm" class="byCategoryChoice">
+            <select id="categorySelect" formControlName="categorySelect">
+                <option *ngFor="let c of categories" value={{c}}>{{c}}</option>
+            </select>
+            <a href="#" class="byCategory"(click)="getByCategory()" 
+            routerLink="/company">By Category</a>
+        </form>
+
+        <!-- Coupons Table -->
+        <article>
+            <legend class="legend2"><span class="number2">2</span>Company Coupons</legend>
+            <table *ngIf=allCoupons class="content-table">
+             <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Type</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Start-Date</th>
+                    <th>End-Date</th>
+                    <th>Amount</th>
+                    <th>Price</th>
+                    <th>Image</th>
+                    <th>Remove</th>
+                    <th>Update</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let s of allCoupons">
+                    <td>{{s.couponId}}</td>
+                    <td>{{s.type}}</td>
+                    <td>{{s.title}}</td>
+                    <td>{{s.description}}</td>
+                    <td>{{s.startDate}}</td>
+                    <td>{{s.endDate}}</td>
+                    <td>{{s.amount}}</td>
+                    <td>{{s.price}}</td>
+                    <td>{{s.image}}</td>
+                    <td><a href="#" class="deleteBtn" (click)="deleteCoupon(s.couponId)" routerLink="/company">delete</a></td>
+                    <td><a href="#" class="updateBtn" routerLink="/coupon/{{s.couponId}}">update</a></td>
+                </tr>
+            </tbody>
+            </table>
+        </article>
+        <a href="#" class="logoutBtn" (click)="logout()">logout</a>
+    </div>
+</body>
+

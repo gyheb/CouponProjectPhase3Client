@@ -1,3 +1,13 @@
+body {
+    font-family: sans-serif;
+    background-image: url("https://coolbackgrounds.io/images/backgrounds/index/ranger-4df6c1b6.png");
+    background-size: cover;
+    margin: -5px;
+    padding: -5px;
+    height: 100vh;
+    overflow: hidden;
+}
+
 .content-table{
     border-collapse: collapse;
     margin: 25px 0;
@@ -6,6 +16,9 @@
     border-radius: 5px 5px 0 0;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+    top: -920px;
+    left: 660px;
 }
 
 .content-table thead tr {
@@ -35,4 +48,226 @@
 .content-table tbody tr.active-row {
     font-weight: bold;
     color: #009879;
+}
+
+ /* ======== second table =========== */
+
+ .content-table2 {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    top: 96px;
+    left: 1335px;
+}
+
+.content-table2 thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-table2 th,
+.content-table2 td {
+    padding: 12px 15px;
+}
+
+.content-table2 tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.content-table2 tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.content-table2 tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.content-table2 tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+ /* ====== Logout / Update / Delete buttons  ===== */
+ .logoutBtn {
+    text-decoration: none;
+    background-color: #009879;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px; /* for rounded corners*/
+    margin: 0 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.30);
+    position: fixed;
+    right: 1%;
+    top: 2%;
+}
+
+.logoutBtn:hover {
+    background-color: #109177;
+}
+
+.deleteBtn, .updateBtn {
+    text-decoration: none;
+    background-color: #009879;
+    color: #fff;
+    padding: 5px 20px;
+    border-radius: 25px; /* for rounded corners*/
+    margin: 0 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.20);
+}
+
+.deleteBtn:hover, .updateBtn:hover {
+    background-color: #109177;
+}
+
+/* ======== Add a Coupon Form ========*/
+.form-style-1{
+	max-width: 500px;
+	padding: 10px 20px;
+	background: #f4f7f8;
+	margin: 10px ;
+	padding: 20px;
+	background: #f4f7f8;
+	border-radius: 8px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.form-style-1 fieldset{
+	border: none;
+}
+.form-style-1 legend {
+	font-size: 1.4em;
+	margin-bottom: 10px;
+}
+.form-style-1 label {
+	display: block;
+	margin-bottom: 8px;
+}
+
+.form-style-1 input[type="text"],
+.form-style-1 input[type="email"],
+.form-style-1 input[type="password"],
+.form-style-1 select {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	background: rgba(255,255,255,.1);
+	border: none;
+	border-radius: 4px;
+	font-size: 15px;
+	margin: 0;
+	outline: 0;
+	padding: 10px;
+	width: 100%;
+	box-sizing: border-box; 
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+	background-color: #e8eeef;
+	color:#8a97a0;
+	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+	box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+	margin-bottom: 30px;
+}
+
+.form-style-1 input[type="text"]:focus,
+.form-style-1 input[type="email"]:focus,
+.form-style-1 input[type="password"]:focus,
+.form-style-1 select:focus{
+	background: #d2d9dd;
+}
+
+.form-style-1 select{
+	-webkit-appearance: menulist-button;
+	height:35px;
+}
+
+.form-style-1 .number {
+	background: #1abc9c;
+	color: #fff;
+	height: 30px;
+	width: 30px;
+	display: inline-block;
+	font-size: 0.8em;
+	margin-right: 4px;
+	line-height: 30px;
+	text-align: center;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+	border-radius: 15px 15px 15px 0px;
+}
+
+.form-style-1 input[type="button"] {
+	position: relative;
+	display: block;
+	padding: 19px 39px 18px 39px;
+	color: #FFF;
+	margin: 0 auto;
+	background: #009879;
+	font-size: 18px;
+	text-align: center;
+	font-style: normal;
+	width: 100%;
+	border: 1px solid #16a085;
+	border-width: 1px 1px 3px;
+    margin-bottom: 10px;
+    border-radius: 60px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.20);
+}
+
+.form-style-1 input[type="button"]:hover {
+	background: #109177;
+}
+
+/* Company Coupons Headline*/
+.number2 {
+	background: #1abc9c;
+	color: #fff;
+	height: 30px;
+	width: 30px;
+	display: inline-block;
+	font-size: 0.8em;
+	margin-right: 4px;
+	line-height: 30px;
+	text-align: center;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+    border-radius: 15px 15px 15px 0px;
+    position: absolute;
+    top: -3px;
+    left: -35px;
+}
+
+.legend2 {
+	font-size: 1.4em;
+    margin-bottom: 10px;
+    position: absolute;
+    top: 80px;
+    left: 700px;
+}
+
+.number3 {
+	background: #1abc9c;
+	color: #fff;
+	height: 30px;
+	width: 30px;
+	display: inline-block;
+	font-size: 0.8em;
+	margin-right: 4px;
+	line-height: 30px;
+	text-align: center;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+    border-radius: 15px 15px 15px 0px;
+    position: absolute;
+    top: -3px;
+    left: -35px;
+}
+
+.legend3 {
+	font-size: 1.4em;
+    margin-bottom: 10px;
+    position: absolute;
+    top: 80px;
+    left: 1370px;
 }

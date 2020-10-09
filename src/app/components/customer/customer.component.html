@@ -1,8 +1,25 @@
 <body>
     <div>
+         <!-- Searching Options -->
+         <a href="#" class="getAllCoupons" (click)="getAllCoupons()"
+         routerLink="/customer">Show All</a>
+         <form [formGroup]="priceForm" class="byPriceChoice">
+             <input type="number" formControlName="price"/>
+              <a href="#" class="byPrice" (click)="getByPrice()" 
+              routerLink="/customer">By Price</a>
+         </form>
+         <form [formGroup]="categoryForm" class="byCategoryChoice">
+             <select id="categorySelect" formControlName="categorySelect">
+                  <option *ngFor="let c of categories" value={{c}}>{{c}}</option>
+             </select>
+             <a href="#" class="byCategory"(click)="getByCategory()" 
+            routerLink="/customer">By Category</a>
+        </form>
+
+        <!-- Customer Coupons Table -->
         <article>
-            <h2>My Coupons</h2>
-            <table *ngIf=coupons>
+            <legend class="legend1"><span class="number1">1</span>My Coupons</legend>
+            <table *ngIf=coupons class="content-table">
              <thead>
                 <tr>
                     <th>ID</th>
@@ -31,9 +48,11 @@
             </tbody>
             </table>
         </article>
+
+        <!-- All Coupons Table -->
         <article>
-            <h2>All Coupons</h2>
-            <table *ngIf=systemCoups>
+            <legend class="legend2"><span class="number2">1</span>All Coupons</legend>
+            <table *ngIf=systemCoups class="content-table2">
              <thead>
                 <tr>
                     <th>ID</th>
@@ -59,10 +78,11 @@
                     <td>{{s.amount}}</td>
                     <td>{{s.price}}</td>
                     <td>{{s.image}}</td>
-                    <td><button (click)="purchaseCoupon(s)">buy</button></td>
+                    <td><a href="#" class="buyBtn"(click)="purchaseCoupon(s)" routerLink="/customer">buy</a></td>
                 </tr>
             </tbody>
             </table>
         </article>
+        <a href="#" class="logoutBtn" (click)="logout()">logout</a>
     </div>
 </body>

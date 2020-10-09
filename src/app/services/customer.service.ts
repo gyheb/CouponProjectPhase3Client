@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Coupon } from '../models/coupon';
 import { CategoryType } from '../models/category-type';
 import { Customer } from '../models/customer';
+import { Company } from '../models/company';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class CustomerService {
 
   public purchaseCoupon(coupon:Coupon){
     return this.httpClient.post("http://localhost:8080/customer/"
-    + sessionStorage.token, coupon);
+    + sessionStorage.token, coupon, {responseType: "text"});
   }
   
   public getAllCoupons(){
@@ -31,9 +32,14 @@ export class CustomerService {
     + sessionStorage.token + "/CouponsByCategory/" + type);
   }
 
+  public getCompanyFromCoupon(coupId:number) {
+    return this.httpClient.get<Company>("http://localhost:8080/customer/"
+    + sessionStorage.token + "/" + coupId);
+  }
+
   public getAllCouponsUpToPrice(price:number){
     return this.httpClient.get<Coupon[]>("http://localhost:8080/customer/"
-    + sessionStorage.token + "CouponsUpToPrice" + price);
+    + sessionStorage.token + "/CouponsUpToPrice/" + price);
   }
 
   public getOneCoupon(coupId){
@@ -44,6 +50,10 @@ export class CustomerService {
   public getCustomerDetails(){
     return this.httpClient.get<Customer>("http://localhost:8080/customer/"
     + sessionStorage.token + "/CustomerDetails");
+  }
+
+  public logout(){
+    return this.httpClient.post("http://localhost:8080/admin/logout", sessionStorage.token);
   }
 
 }
